@@ -5,6 +5,8 @@ Decoder Values
 * ATMOS TrueHD
 * DTS-HD MA
 * DTS:X MA
+* DD
+* DD+
 
 Upmixer
 * none
