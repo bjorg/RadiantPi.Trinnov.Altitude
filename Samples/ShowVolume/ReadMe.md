@@ -36,8 +36,6 @@ Press ENTER to exit.
 Volume: -31.6
 Volume: -30.4
 Mute: True
-Mute: True
-Mute: False
 Mute: False
 Volume: -31.6
 ```
