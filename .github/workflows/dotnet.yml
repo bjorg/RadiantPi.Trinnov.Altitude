@@ -1,0 +1,40 @@
+name: Publish Package
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      PUSH_PACKAGES: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+
+      # Build RadiantPi.RadiantPi.Trinnov.Altitude
+      - name: Restore dependencies
+        run: dotnet restore Source/RadiantPi.RadiantPi.Trinnov.Altitude/RadiantPi.RadiantPi.Trinnov.Altitude.csproj
+      - name: Build
+        run: dotnet build --no-restore Source/RadiantPi.RadiantPi.Trinnov.Altitude/RadiantPi.RadiantPi.Trinnov.Altitude.csproj
+
+      # Build Samples
+      - name: Build Show Audio Codec Sample
+        run: dotnet build Samples/ShowAudioCodec/ShowAudioCodec.csproj
+      - name: Build Show Volume Sample
+        run: dotnet build Samples/ShowVolume/ShowVolume.csproj
+
+      # Publish RadiantPi.RadiantPi.Trinnov.Altitude
+      - name: Publish
+        if: ${{ env.PUSH_PACKAGES }}
+        uses: brandedoutcast/publish-nuget@v2.5.5
+        with:
+            PROJECT_FILE_PATH: Source/RadiantPi.RadiantPi.Trinnov.Altitude/RadiantPi.RadiantPi.Trinnov.Altitude.csproj
+            NUGET_KEY: ${{ secrets.NUGET_API_KEY }}
