@@ -29,7 +29,7 @@ Console.ReadLine();
 ## Output
 
 ```
-ress ENTER to exit.
+Press ENTER to exit.
 Audio Codec: Decoder='DD' Upmixer='Dolby Surround'
 Audio Codec: Decoder='DTS:X MA' Upmixer='Neural:X'
 ```
