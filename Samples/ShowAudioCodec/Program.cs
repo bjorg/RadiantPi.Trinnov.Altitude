@@ -9,7 +9,7 @@ using var client = new TrinnovAltitudeClient(new() {
 
 // hook-up event handlers
 client.AudioDecoderChanged += delegate (object? sender, AudioDecoderChangedEventArgs args) {
-    Console.WriteLine($"Audio Codec: Decoder='{args.Decoder}' Upmixer='{args.Upmixer}");
+    Console.WriteLine($"Audio Codec: Decoder='{args.Decoder}' Upmixer='{args.Upmixer}'");
 };
 
 // connect to device
