@@ -3,6 +3,7 @@ Decoder Values
 * PCM
 * TrueHD
 * ATMOS TrueHD
+* DTS
 * DTS-HD MA
 * DTS-HD MA Auro-3D
 * DTS:X MA
