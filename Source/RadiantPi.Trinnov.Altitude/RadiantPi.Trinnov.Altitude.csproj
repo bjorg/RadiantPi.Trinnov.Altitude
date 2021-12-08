@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
 
     <PackageId>RadiantPi.Trinnov.Altitude</PackageId>
-    <Version>1.0</Version>
+    <Version>1.1</Version>
     <Title>RadiantPi Trinnov Altitude Client Library</Title>
     <Description>Communication client for Trinnov Altitude</Description>
     <Copyright>Copyright (C) 2020-2021</Copyright>

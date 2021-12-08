@@ -48,10 +48,11 @@ namespace RadiantPi.Trinnov.Altitude {
         public TrinnovAltitudeClient(TrinnovAltitudeClientConfig config, ILoggerFactory? loggerFactory = null)
             : this(
                 new TelnetClient(
-                    config.Host ?? throw new ArgumentNullException("config.host"),
+                    config.Host ?? throw new ArgumentNullException("config.Host"),
                     config.Port ?? 44100,
                     loggerFactory?.CreateLogger<TelnetClient>()
-                ), loggerFactory?.CreateLogger<TrinnovAltitudeClient>()
+                ),
+                loggerFactory?.CreateLogger<TrinnovAltitudeClient>()
             ) { }
 
         public TrinnovAltitudeClient(ITelnet telnet, ILogger<TrinnovAltitudeClient>? logger) {
