@@ -9,8 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      PUSH_PACKAGES: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
 
     steps:
       - uses: actions/checkout@v2
@@ -33,7 +31,7 @@ jobs:
 
       # Publish RadiantPi.Trinnov.Altitude
       - name: Publish
-        if: ${{ env.PUSH_PACKAGES }}
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: brandedoutcast/publish-nuget@v2.5.5
         with:
             PROJECT_FILE_PATH: Source/RadiantPi.Trinnov.Altitude/RadiantPi.Trinnov.Altitude.csproj
