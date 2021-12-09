@@ -33,7 +33,7 @@ namespace RadiantPi.Trinnov.Altitude {
         public ushort? Port { get; set; }
     }
 
-    public class TrinnovAltitudeClient : ITrinnovAltitude {
+    public sealed class TrinnovAltitudeClient : ITrinnovAltitude {
 
         //--- Class Fields ---
         private static Regex _decoderRegex = new Regex(@"^DECODER NONAUDIO [01] PLAYABLE (?<playable>[01]) DECODER (?<decoder>.+) UPMIXER (?<upmixer>.+)", RegexOptions.Compiled);
@@ -72,7 +72,6 @@ namespace RadiantPi.Trinnov.Altitude {
 
         //--- Methods ---
         public Task ConnectAsync() => _telnet.ConnectAsync();
-
         public Task SetVolumeAsync(float volume) => _telnet.SendAsync($"volume {volume}");
         public Task AdjustVolumeAsync(float delta) => _telnet.SendAsync($"dvolume {delta}");
 
@@ -95,7 +94,7 @@ namespace RadiantPi.Trinnov.Altitude {
         }
 
         private void MessageReceived(object? sender, TelnetMessageReceivedEventArgs args) {
-            Logger?.LogDebug($"received: {args.Message}");
+            Logger?.LogDebug($"Received: {args.Message}");
 
             // check for decoder event
             var decoderMatch = _decoderRegex.Match(args.Message);

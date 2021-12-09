@@ -19,6 +19,7 @@
 using System;
 
 namespace RadiantPi.Trinnov.Altitude {
+
     public sealed class AudioDecoderChangedEventArgs : EventArgs {
 
         //--- Constructors ---
