@@ -1,5 +1,12 @@
 # Release Notes
 
+## v2.1 (2022-02-16)
+
+### Features
+
+* Added `SelectPresetAsync()` to select preset.
+* Added `SelectProfileAsync()` to select profile (a.k.a. source).
+
 ## v2.0 (2022-02-15)
 
 ### BREAKING CHANGES
