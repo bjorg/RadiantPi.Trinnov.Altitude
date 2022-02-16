@@ -16,38 +16,35 @@
  * with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-using System;
+namespace RadiantPi.Trinnov.Altitude;
 
-namespace RadiantPi.Trinnov.Altitude {
+public sealed class AudioDecoderChangedEventArgs : EventArgs {
 
-    public sealed class AudioDecoderChangedEventArgs : EventArgs {
-
-        //--- Constructors ---
-        public AudioDecoderChangedEventArgs(string decoder, string upmixer) {
-            Decoder = decoder ?? throw new ArgumentNullException(nameof(decoder));
-            Upmixer = upmixer ?? throw new ArgumentNullException(nameof(upmixer));
-        }
-
-        //--- Properties ---
-        public string Decoder { get; }
-        public string Upmixer { get; }
+    //--- Constructors ---
+    public AudioDecoderChangedEventArgs(string decoder, string upmixer) {
+        Decoder = decoder ?? throw new ArgumentNullException(nameof(decoder));
+        Upmixer = upmixer ?? throw new ArgumentNullException(nameof(upmixer));
     }
 
-    public sealed class VolumeChangedEventArgs : EventArgs {
+    //--- Properties ---
+    public string Decoder { get; }
+    public string Upmixer { get; }
+}
 
-        //--- Constructors ---
-        public VolumeChangedEventArgs(float volume) => Volume = volume;
+public sealed class VolumeChangedEventArgs : EventArgs {
 
-        //--- Properties ---
-        public float Volume { get; init; }
-    }
+    //--- Constructors ---
+    public VolumeChangedEventArgs(float volume) => Volume = volume;
 
-    public sealed class MuteChangedEventArgs : EventArgs {
+    //--- Properties ---
+    public float Volume { get; init; }
+}
 
-        //--- Constructors ---
-        public MuteChangedEventArgs(bool muted) => Muted = muted;
+public sealed class MuteChangedEventArgs : EventArgs {
 
-        //--- Properties ---
-        public bool Muted { get; }
-    }
+    //--- Constructors ---
+    public MuteChangedEventArgs(bool muted) => Muted = muted;
+
+    //--- Properties ---
+    public bool Muted { get; }
 }

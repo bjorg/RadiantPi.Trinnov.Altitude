@@ -15,7 +15,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 5.0.x
+          dotnet-version: 6.0.x
 
       # Build RadiantPi.Trinnov.Altitude
       - name: Restore dependencies
@@ -26,6 +26,8 @@ jobs:
       # Build Samples
       - name: Build Show Audio Codec Sample
         run: dotnet build Samples/ShowAudioCodec/ShowAudioCodec.csproj
+      - name: Build Show Audio Codec On RadiancePro Sample
+        run: dotnet build Samples/ShowAudioCodecOnRadiancePro/ShowAudioCodecOnRadiancePro.csproj
       - name: Build Show Volume Sample
         run: dotnet build Samples/ShowVolume/ShowVolume.csproj
 
