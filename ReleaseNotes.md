@@ -1,5 +1,14 @@
 # Release Notes
 
+
+## v2.1 (2022-02-16)
+
+### BREAKING CHANGES
+
+* Replaced `int` parameter in `SelectPresetAsync()` with `TrinnovAltitudePreset` enum.
+* Replaced `int` parameter in `SelectProfileAsync()` with `TrinnovAltitudeProfile` enum.
+
+
 ## v2.1 (2022-02-16)
 
 ### Features

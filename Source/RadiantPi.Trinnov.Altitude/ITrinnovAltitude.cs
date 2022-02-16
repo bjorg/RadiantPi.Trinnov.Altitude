@@ -18,6 +18,73 @@
 
 namespace RadiantPi.Trinnov.Altitude;
 
+public enum TrinnovAltitudePreset {
+    BuiltIn,
+    Preset1,
+    Preset2,
+    Preset3,
+    Preset4,
+    Preset5,
+    Preset6,
+    Preset7,
+    Preset8,
+    Preset9,
+    Preset10,
+    Preset11,
+    Preset12,
+    Preset13,
+    Preset14,
+    Preset15,
+    Preset16,
+    Preset17,
+    Preset18,
+    Preset19,
+    Preset20,
+    Preset21,
+    Preset22,
+    Preset23,
+    Preset24,
+    Preset25,
+    Preset26,
+    Preset27,
+    Preset28,
+    Preset29
+}
+
+public enum TrinnovAltitudeProfile {
+    Hdmi1,
+    Hdmi2,
+    Hdmi3,
+    Hdmi4,
+    Hdmi5,
+    Hdmi6,
+    Hdmi7,
+    Hdmi8,
+    Network,
+    Spdif1,
+    Spdif2,
+    Spdif3,
+    Spdif4,
+    Spdif71Pcm,
+    Optinal5,
+    Optinal6,
+    Optinal7,
+    Optinal8,
+    Optinal71PCM,
+    DciMchAes,
+    Aes1,
+    Aes2,
+    AnalogBalanced1,
+    AnalogBalanced2,
+    AnalogBalanced1And2,
+    Microphone,
+    AnalogSingleEnded1,
+    AnalogSingleEnded2,
+    AnalogSingleEnded3,
+    AnalogSingleEnded4,
+    Roon
+}
+
 public interface ITrinnovAltitude : IDisposable {
 
     //--- Events ---
@@ -60,11 +127,12 @@ public interface ITrinnovAltitude : IDisposable {
     /// Select preset.
     /// </summary>
     /// <param name="preset">Preset number: 0 = built-in preset, ...</param>
-    Task SelectPresetAsync(int preset);
+    Task SelectPresetAsync(TrinnovAltitudePreset preset);
 
     /// <summary>
     /// Select profile (a.k.a. source).
     /// </summary>
     /// <param name="source">Source number: 0 = HDMI1, 1 = HDMI2, ...</param>
-    Task SelectProfileAsync(int source);
+    Task SelectProfileAsync(TrinnovAltitudeProfile source);
 }
+
