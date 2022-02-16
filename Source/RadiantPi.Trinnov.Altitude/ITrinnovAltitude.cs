@@ -55,4 +55,16 @@ public interface ITrinnovAltitude : IDisposable {
     /// </summary>
     /// <param name="delta">Delta volume value.</param>
     Task AdjustVolumeAsync(float delta);
+
+    /// <summary>
+    /// Select preset.
+    /// </summary>
+    /// <param name="preset">Preset number: 0 = built-in preset, ...</param>
+    Task SelectPresetAsync(int preset);
+
+    /// <summary>
+    /// Select profile (a.k.a. source).
+    /// </summary>
+    /// <param name="source">Source number: 0 = HDMI1, 1 = HDMI2, ...</param>
+    Task SelectProfileAsync(int source);
 }

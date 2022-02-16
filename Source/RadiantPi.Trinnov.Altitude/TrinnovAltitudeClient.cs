@@ -71,6 +71,8 @@ public sealed class TrinnovAltitudeClient : ITrinnovAltitude {
     public Task ConnectAsync() => _telnet.ConnectAsync();
     public Task SetVolumeAsync(float volume) => _telnet.SendAsync($"volume {volume}");
     public Task AdjustVolumeAsync(float delta) => _telnet.SendAsync($"dvolume {delta}");
+    public Task SelectPresetAsync(int preset) => _telnet.SendAsync($"loadp {preset}");
+    public Task SelectProfileAsync(int source) => _telnet.SendAsync($"profile {source}");
 
     public void Dispose() {
         _mutex.Dispose();
