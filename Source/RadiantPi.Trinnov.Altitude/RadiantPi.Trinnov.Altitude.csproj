@@ -10,7 +10,7 @@
     <Version>1.1</Version>
     <Title>RadiantPi Trinnov Altitude Client Library</Title>
     <Description>Communication client for Trinnov Altitude</Description>
-    <Copyright>Copyright (C) 2020-2021</Copyright>
+    <Copyright>Copyright (C) 2020-2022</Copyright>
     <Authors>Bjorg</Authors>
 
     <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
