@@ -1,5 +1,4 @@
-﻿using System;
-using RadiantPi.Trinnov.Altitude;
+﻿using RadiantPi.Trinnov.Altitude;
 using RadiantPi.Lumagen;
 
 // initialize clients

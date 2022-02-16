@@ -1,16 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>RadiantPi.Trinnov.Altitude</RootNamespace>
     <NoWarn>CS1998</NoWarn>
     <Deterministic>true</Deterministic>
     <Nullable>enable</Nullable>
 
     <PackageId>RadiantPi.Trinnov.Altitude</PackageId>
-    <Version>1.0</Version>
+    <Version>2.0</Version>
     <Title>RadiantPi Trinnov Altitude Client Library</Title>
     <Description>Communication client for Trinnov Altitude</Description>
-    <Copyright>Copyright (C) 2020-2021</Copyright>
+    <Copyright>Copyright (C) 2020-2022</Copyright>
     <Authors>Bjorg</Authors>
 
     <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
@@ -19,8 +19,14 @@
     <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
-    <PackageReference Include="RadiantPi.Telnet" Version="1.0.0" />
+    <Using Include="System" />
+    <Using Include="System.Linq" />
+    <Using Include="System.Threading" />
+    <Using Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+    <PackageReference Include="RadiantPi.Telnet" Version="2.0.1" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\ReadMe.md" Pack="true" PackagePath="\" />

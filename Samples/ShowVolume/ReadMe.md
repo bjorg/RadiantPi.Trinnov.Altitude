@@ -3,8 +3,8 @@
 Show volume changes in the Trinnov Altitude.
 
 ## Code
+
 ```csharp
-using System;
 using RadiantPi.Trinnov.Altitude;
 
 // initialize client

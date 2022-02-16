@@ -9,15 +9,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      PUSH_PACKAGES: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
 
     steps:
       - uses: actions/checkout@v2
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 5.0.x
+          dotnet-version: 6.0.x
 
       # Build RadiantPi.Trinnov.Altitude
       - name: Restore dependencies
@@ -28,12 +26,14 @@ jobs:
       # Build Samples
       - name: Build Show Audio Codec Sample
         run: dotnet build Samples/ShowAudioCodec/ShowAudioCodec.csproj
+      - name: Build Show Audio Codec On RadiancePro Sample
+        run: dotnet build Samples/ShowAudioCodecOnRadiancePro/ShowAudioCodecOnRadiancePro.csproj
       - name: Build Show Volume Sample
         run: dotnet build Samples/ShowVolume/ShowVolume.csproj
 
       # Publish RadiantPi.Trinnov.Altitude
       - name: Publish
-        if: ${{ env.PUSH_PACKAGES }}
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: brandedoutcast/publish-nuget@v2.5.5
         with:
             PROJECT_FILE_PATH: Source/RadiantPi.Trinnov.Altitude/RadiantPi.Trinnov.Altitude.csproj

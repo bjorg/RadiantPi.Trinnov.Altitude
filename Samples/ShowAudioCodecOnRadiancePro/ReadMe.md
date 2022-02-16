@@ -3,8 +3,8 @@
 Show audio codec changes in the Trinnov Altitude on a Lumagen RadiancePro.
 
 ## Code
+
 ```csharp
-using System;
 using RadiantPi.Trinnov.Altitude;
 using RadiantPi.Lumagen;
 
