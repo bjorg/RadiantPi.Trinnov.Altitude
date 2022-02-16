@@ -117,7 +117,7 @@ public sealed class TrinnovAltitudeClient : ITrinnovAltitude {
             if(float.TryParse(volumeText, out var volume)) {
                 VolumeChanged?.Invoke(this, new(volume));
             } else {
-                Logger.LogWarning($"Invalid VOLUME value: {volumeText}");
+                Logger?.LogWarning($"Invalid VOLUME value: {volumeText}");
             }
             return;
         }
@@ -134,7 +134,7 @@ public sealed class TrinnovAltitudeClient : ITrinnovAltitude {
                 MuteChanged?.Invoke(this, new(true));
                 break;
             default:
-                Logger.LogWarning($"Unrecognized MUTE value: {muteText}");
+                Logger?.LogWarning($"Unrecognized MUTE value: {muteText}");
                 break;
             }
             return;
